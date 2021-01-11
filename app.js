@@ -2,6 +2,7 @@ const express = require ("express");
 const app = express();
 const port = 3000;
 const https = require ("https");
+const nodemailer = require("nodemailer");
 
 app.use(express.static("public"));
 
@@ -10,6 +11,10 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", (req,res) => {
     res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/contact.html", (req,res) => {
+    res.sendFile(__dirname + "/contact.html");
 });
 
 
